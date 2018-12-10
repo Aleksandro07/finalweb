@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/materialize.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+	integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	crossorigin="anonymous" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+	<div class="navbar-fixed">
+		<nav class="grey darken-3">
+			<div class="container">
+				<div class="nav-wrapper">
+					<img src="/img/garagem1.png" /> <a href="#"
+						data-target="mobile-nav" class="sidenav-trigger"> <i
+						class="material-icons">menu</i>
+					</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="/pessoa/home">Pagina Inicial</a></li>
+						<li><a href="/produto/carrinho">Carrinho de compras</a></li>
+						<li class="active red"><a href="#">Sair</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<tbody>
+
+		<section class="section section-icons grey lighten-4 center">
+			<br></br>
+			<form method="post" action="/produto/comprar" th:object="${compra}">
+				<div class="container">
+					<div class="row ">
+						<div class="col m3 m4" th:each="produto: ${todosOsProdutos}">
+							<div class="card">
+								<div class="card-image">
+									<img alt="" th:src="@{'/images/'+${produto.nome}+.png}" />
+								</div>
+								<div class="card-content">
+
+									<p id = "nome_produto"><b><p th:text="${produto.nome}"></p></b></p> <br>
+									<i><p th:text="${produto.preco}"></p></i> </br>
+									<button class="btn waves-effect waves-light " type="submit"
+										name="action" href="/produto/comprar/">
+										Comprar <i class="material-icons right">add_shopping_cart</i>
+									</button>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</form>
+
+		</section>
+
+
+
+	</tbody>
+
+	<!-- 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Foto</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="produto: ${todosOsProdutos}">
+      <td th:text="${produto.id}"></td>
+      <td th:text="${produto.nome}"></td>
+      <td> <img alt="" th:src="@{'/images/'+${produto.nome}+.png}"/> </td>
+    </tr>
+      
+  </tbody>
+  
+</table>
+ -->
+
+</body>
+</html>

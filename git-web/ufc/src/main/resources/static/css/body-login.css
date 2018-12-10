@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+body{
+	
+	background-image: url("/img/pagina-login2.jpg");
+	background-size: cover;
+	
+}
+
+
+.login{
+	
+	margin-top: 50px;
+	
+}
+
+
+.login input{
+	font-size: 20px;
+	color: white;
+	
+}
+
+ 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Classic Garage</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/materialize.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+	integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	crossorigin="anonymous" />
+</head>
+<body>
+
+	<div class="navbar-fixed">
+		<nav class="grey darken-3">
+			<div class="container">
+				<div class="nav-wrapper">
+					<img src="/img/garagem1.png" /> <a href="#"
+						data-target="mobile-nav" class="sidenav-trigger"> <i
+						class="material-icons">menu</i>
+					</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="/pessoa/home">Inicio</a></li>
+						<li><a href="/produto/cadastro">Cadastrar Produto</a></li>
+						<li><a href="/produto/gerenciamento">Gerenciar Produto</a></li>
+						<li class="active red"><a href="#">Sair</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<tbody>
+
+		<section class="section section-icons grey lighten-4 center">
+			<br></br>
+			<div class="container">
+				<div class="row ">
+					<div class="col m3 m4" th:each="produto: ${todosOsProdutos}">
+						<div class="card">
+							<div class="card-image">
+								<img alt="" th:src="@{'/images/'+${produto.nome}+.png}" />
+							</div>
+							<div class="card-content">
+
+								<b><p th:text="${produto.nome}"></p></b> <br> <i><p
+										th:text="${produto.preco}"></p></i> </br> <a
+									class="waves-effect waves-light btn grey darken-3"><i
+									class="material-icons right">add_shopping_cart</i>comprar</a> <br></br>
+								<br></br> <b><i>Perfil Administrador</i></b>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+
+
+		</section>
+
+
+
+	</tbody>
+
+
+	<section class="section section-follow grey darken-2 white-text center">
+		<div class="container">
+			<div class="row">
+				<div class="col12">
+					<h4>Follow Classic Garage</h4>
+					<p>Siga nossa redes sociais</p>
+					<a href="#" class="white-text"> <i
+						class="fab fa-facebook fa-4x"></i>
+					</a> <a href="#" class="white-text"> <i
+						class="fab fa-instagram fa-4x"></i>
+					</a> <a href="#" class="white-text"> <i
+						class="fab fa-google-plus fa-4x"></i>
+					</a> <a href="#" class="white-text"> <i
+						class="fab fa-pinterest fa-4x"></i>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+
+	</section>
+
+	<script src="/js/materialize.min.js" />
+
+</body>
+</html>

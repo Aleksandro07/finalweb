@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+body{
+	
+	background-image : url("/img/fundo5.png");	
+	background-size: cover;
+}
+
+.card_dados{
+	
+	margin-top: 50px;
+	
+}
+

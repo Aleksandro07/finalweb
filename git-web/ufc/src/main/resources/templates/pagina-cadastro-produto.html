@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Classic Garage</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/materialize.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+	integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	crossorigin="anonymous" />
+</head>
+<body>
+
+	<div class="navbar-fixed">
+		<nav class="grey darken-3">
+			<div class="container">
+				<div class="nav-wrapper">
+					<img src="/img/garagem1.png" /> <a href="#"
+						data-target="mobile-nav" class="sidenav-trigger"> <i
+						class="material-icons">menu</i>
+					</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="/pessoa/home">Inicio</a></li>
+						<li><a href="/produto/perfil-adm">Loja</a></li>
+						<li><a href="/produto/gerenciamento">Gerenciar Produtos</a></li>
+						<li><a href="#contacts">Sair</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+	<section class="section section-icons grey lighten-4 center">
+
+		<form method="post" action="/produto/cadastrar" enctype="multipart/form-data"  th:object="${produto}">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col s12 m6 ">
+
+						<div class="card-panel col s12 push-s6 ">
+
+							<h4>Cadastrar Produtos</h4>
+
+							<div class="row">
+								<form class="col s12 ">
+
+									<div class="row">
+
+										<div class="input-field col s12">
+											<br>
+											<input id="nome" type="text" class="validate" name="nome" />
+											<label class="active" for="nome">Nome</label></br>
+										</div>
+
+										<div class="input-field col s6">
+											<input id="preco" type="text" class="validate" name="preco" /> <label
+												class="active" for="preco">Preço</label>
+
+										</div>
+										
+										<div class="input-field col s12">
+												Selecione Imagem: <input type="file" name="imagem"/>
+  
+										</div>
+
+										<div class="input-field col s12 ">
+											<button class="btn waves-effect waves-light grey darken-3 " type="submit"
+												name="action">
+												Cadastrar <i class="material-icons right">send</i>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+
+
+
+
+
+</body>
+</html>
